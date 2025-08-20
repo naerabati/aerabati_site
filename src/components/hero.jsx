@@ -99,17 +99,12 @@ export default function Hero() {
                 <li>Circuit benchmarking</li>
             </ul>
         </div>
-        <div className='flex flex-col w-96'>
-            <div className='w-96'><Spotify/></div>
-        </div>
-
+        <div className="flex flex-col w-96 gap-6">
+  <div className="w-full"><Spotify /></div>
+  <div className="w-full !max-w-full"><Skills /></div>
+</div>
       </div>
 
-      <div className="flex justify-center content-center pt-17">
-        <div className="w-[100rem]">
-          <Skills />
-        </div>
-      </div>
 
     </div>
   );
