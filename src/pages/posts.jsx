@@ -2,6 +2,7 @@ import { Routes, Route, Link, useParams } from "react-router-dom";
 import firstPostContent from "./posts_files/post_1.md?raw";
 import secondPostContent from "./posts_files/post_2.md?raw";
 import MarkdownRenderer from "../lib/MarkdownRender.jsx";
+import Footer from "../components/footer.jsx"
 
 
 const posts = [

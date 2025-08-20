@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from "../components/footer.jsx"
 
 const experiences = [
   {
@@ -33,6 +34,7 @@ const experiences = [
 
 const Experience = () => {
     return (
+      <div>
       <div className="max-w-7xl mx-auto px-6 py-16">
         <h1 className="text-5xl mb-12 text-center font-medium">Experience</h1>
   
@@ -49,6 +51,8 @@ const Experience = () => {
             </div>
           ))}
         </div>
+      </div>
+      <Footer/>
       </div>
     );
   };
