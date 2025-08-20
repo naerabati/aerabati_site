@@ -1,0 +1,14 @@
+@keyframes pulse-shadow {
+    0%, 100% {
+      box-shadow: 0 0 4px #22c55e;
+    }
+    50% {
+      box-shadow: 0 0 12px #22c55e;
+    }
+  }
+  
+  @layer utilities {
+    .animate-pulse-shadow {
+      animation: pulse-shadow 1.5s ease-in-out infinite;
+    }
+  }

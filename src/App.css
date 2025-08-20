@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+body{
+  font-family: Lora; 
+  background-color: rgb(255, 255, 255); 
+  color: rgb(2, 65, 27); 
+  
+
+}
+
+.font-inter
+{
+  font-family: Inter; 
+  
+}
+
