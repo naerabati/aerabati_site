@@ -4,7 +4,7 @@ import Footer from "../components/footer.jsx"
 const experiences = [
   {
     id: 1,
-    title: 'Fermilab Qunatum Simulation Intern',
+    title: 'Fermilab Quantum Simulation Intern',
     company: 'Fermilab',
     date: 'May 2025 - Aug 2025',
     description: 'Assisted in simulating quantum circuits and developing algorithms for ground state energy estimation.',
@@ -12,7 +12,7 @@ const experiences = [
   {
     id: 2,
     title: 'Undergraduate Researcher',
-    company: 'Pfaff Qunatum Circuit Lab',
+    company: 'Pfaff Quantum Circuit Lab',
     date: 'Sept 2024 - Present',
     description: 'Worked on developing a machine learning model for quantum control based on reaodut data ',
   },

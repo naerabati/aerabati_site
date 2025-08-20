@@ -84,7 +84,7 @@ export default function Hero() {
       </div>
       
       <div className="flex flex-row justify-center content-center gap-40 pt-45">
-        <div className="max-w-96">
+        <div className="w-96">
             <h2 className="text-2xl font-medium pb-6">Research</h2>
             <p className=" pb-6">
                 I've been doing research in the Quantum Sciences field, and my work includes:
@@ -99,14 +99,16 @@ export default function Hero() {
                 <li>Circuit benchmarking</li>
             </ul>
         </div>
-        <div className='flex flex-col max-w-96 min-w-1/4'>
-            <div className='min-w-2/4'><Spotify/></div>
+        <div className='flex flex-col w-96'>
+            <div className='w-96'><Spotify/></div>
         </div>
 
       </div>
 
       <div className="flex justify-center content-center pt-17">
-        <Skills />
+        <div className="w-[100rem]">
+          <Skills />
+        </div>
       </div>
 
     </div>
