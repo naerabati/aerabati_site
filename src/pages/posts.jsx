@@ -8,9 +8,9 @@ import Footer from "../components/footer.jsx"
 const posts = [
     {
       id: "1",
-      title: "First Post",
+      title: "First post",
       date: "Aug 8, 2025",
-      caption: "This is my first blog post",
+      caption: "This is my text post",
       content: firstPostContent,
     },
     {

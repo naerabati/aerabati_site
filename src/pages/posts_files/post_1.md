@@ -1,7 +1,4 @@
-# Hello World
 
-This is my first blog post written in **Markdown**.
+testing!
 
-- You can add lists
-- Links
-- Images
+it's good to know that the markdown is working 
