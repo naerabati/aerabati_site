@@ -4,9 +4,10 @@ const TOKEN_ENDPOINT = 'https://accounts.spotify.com/api/token';
 const RECENTLY_PLAYED_ENDPOINT = 'https://api.spotify.com/v1/me/player/recently-played?limit=4';
 
 // Spotify API credentials
-const client_id = import.meta.env.VITE_CLIENT_ID;
-const client_secret = import.meta.env.VITE_CLIENT_SECRET;
-const refresh_token = import.meta.env.VITE_REFRESH_TOKEN;
+const client_id = import.meta.env.VITE_CLIENT_ID; 
+const client_secret = import.meta.env.VITE_CLIENT_SECRET; 
+const refresh_token = import.meta.env.VITE_REFRESH_TOKEN; 
+
 // Get Access Token
 export const getAccessToken = async () => {
   const basic = btoa(`${client_id}:${client_secret}`);
