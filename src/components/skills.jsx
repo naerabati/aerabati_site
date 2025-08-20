@@ -3,18 +3,25 @@ import { SiCplusplus, SiQiskit, SiNumpy } from "react-icons/si";
 import { FaJava, FaPython, FaRust } from "react-icons/fa";
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt } from "react-icons/fa";
 import { SiJavascript, SiNextdotjs, SiTailwindcss, SiTypescript, SiExpress } from "react-icons/si";
+import { SiPytorch } from "react-icons/si";
+import { SiOpencv } from "react-icons/si";
+import { FaAws } from "react-icons/fa";
+
+
+
 
 export default function Skills() {
   const skills = [
-    { icon: <FaHtml5 />, name: "HTML" },
-    { icon: <FaCss3Alt />, name: "CSS" },
+    
+    { icon: <SiPytorch />, name: "Pytorch" },
+    { icon: <FaJava />, name: "Java" },
     { icon: <SiJavascript />, name: "JavaScript" },
     { icon: <SiTypescript />, name: "TypeScript" },
     { icon: <FaReact />, name: "React" },
     { icon: <SiNextdotjs />, name: "Next.js" },
     { icon: <SiTailwindcss />, name: "Tailwind" },
-    { icon: <FaNodeJs />, name: "Node.js" },
-    { icon: <SiExpress />, name: "Express" },
+    { icon: <FaAws />, name: "AWS" },
+    { icon: <SiOpencv />, name: "OpenCV" },
     { icon: <SiCplusplus />, name: "C++" },
     { icon: <PiFileCSharpDuotone />, name: "C#" },
     { icon: <FaRust />, name: "Rust" },

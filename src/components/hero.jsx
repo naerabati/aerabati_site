@@ -68,7 +68,7 @@ export default function Hero() {
             </h1>
             <p className="text-2xl font-medium pb-3">cs + physics @ UIUC</p>
             <p className="max-w-96 text-md">
-                I'm an undergraduate student at the University of Illinois
+                I'm an undergraduate student at the University of Illinois,
                 Urbana-Champaign majoring in computer science and physics.
             </p>
         </div>
