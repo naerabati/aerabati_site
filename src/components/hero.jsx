@@ -8,7 +8,7 @@ export default function Hero() {
   const [isHovered, setIsHovered] = useState(false);
 
   const TerminalVisual = () => (
-    <div className="w-96 h-64 bg-gray-900 dark:bg-gray-800 rounded-xl p-6 font-mono text-sm">
+    <div className="w-96 h-64 bg-gray-900 rounded-xl p-6 font-mono text-sm">
       <div className="flex gap-2 mb-4">
         <div className="w-3 h-3 bg-red-500 rounded-full"></div>
         <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
@@ -34,7 +34,7 @@ export default function Hero() {
   );
 
   const CodeVisual = () => (
-    <div className="w-96 h-64 bg-gray-900 dark:bg-gray-800 rounded-xl p-6 overflow-hidden">
+    <div className="w-96 h-64 bg-gray-900 rounded-xl p-6 overflow-hidden">
       <div className="space-y-3 font-mono text-sm">
         <div className="text-purple-400">
           <span className="text-pink-400">const</span> researcher = &#123;

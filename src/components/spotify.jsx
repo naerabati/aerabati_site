@@ -31,7 +31,7 @@ export default function Spotify() {
   const isPlaying = nowPlaying && nowPlaying.is_playing;
 
   return (
-    <div className="border border-green-950 w-full max-w-full overflow-hidden dark:bg-gray-800 p-3 sm:p-4 md:p-6 text-xs sm:text-sm rounded-xl cursor-auto">
+    <div className="border border-green-950 w-full max-w-full overflow-hidden p-3 sm:p-4 md:p-6 text-xs sm:text-sm rounded-xl cursor-auto">
       <h2 className="text-2xl mb-3 flex justify-between items-center">
         <span className="text-green-950">Music</span>
         <img
