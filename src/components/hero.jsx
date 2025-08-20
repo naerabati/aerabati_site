@@ -2,6 +2,8 @@ import { useState } from 'react';
 import Skills from './skills.jsx'
 import Spotify from './spotify.jsx'
 
+/* credit to Vishal Gurung for the TerminalVisual and CodeVisual https://g0.monster/ https://github.com/g0GobliN */
+
 export default function Hero() {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -55,71 +57,6 @@ export default function Hero() {
   );
 
   const visual = isHovered ? <CodeVisual /> : <TerminalVisual />;
-
-  /*
-  return (
-    <div className='place-items-center place-content-center content-center'>
-    <div className="min-h-screen flex flex-col items-center justify-center content-center px-6 py-12 max-w-7xl mx-auto">
-     
-      <div className="flex items-center justify-center gap-16 w-full mb-20 place-items-center">
-    
-        <div className="text-left max-w-md">
-          <h1 className="mb-6 font-semibold text-5xl lg:text-6xl">
-            Nishna Aerabati
-          </h1>
-          <div className="mb-8">
-            <span className="text-2xl font-medium">cs + physics @ UIUC</span>
-          </div>
-          <p className="text-base leading-relaxed">
-            I'm an undergraduate student at the University of Illinois
-            Urbana-Champaign majoring in computer science and physics.
-          </p>
-        </div>
-
-      
-        <div>
-          <div
-            className="cursor-pointer transition-all duration-700 transform hover:scale-105"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            {visual}
-          </div>
-        </div>
-      </div>
-
-     
-      <div className="flex gap-16 w-full max-w-6xl">
-    
-        <div className="flex-1 max-w-lg">
-          <h2 className="text-2xl font-semibold mb-6">Research</h2>
-          <p className="text-base leading-relaxed mb-6">
-            I've been doing research in the Quantum Sciences field, and my work includes:
-          </p>
-          <ul className="list-disc list-inside space-y-2 text-sm">
-            <li>Quantum circuit optimizations via ZX Calculus</li>
-            <li>Machine learning for quantum control based on superconducting hardware readout data</li>
-            <li>Development of filters for superconducting hardware</li>
-            <li>Quantum machine learning - developing ansatzes for entanglement detection</li>
-            <li>Quantum simulations - Ground state preparation for neutrinos via VQE, DMRG, Hartree-fock</li>
-            <li>Open source Cirq contributions</li>
-            <li>Circuit benchmarking</li>
-          </ul>
-        </div>
-
-      
-        <div className="flex-1 max-w-lg space-y-8">
-          <div>
-            <Skills />
-          </div>
-          <div>
-            <Spotify />
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-  );*/
 
   return (
     <div className="flex flex-col gap-5">
