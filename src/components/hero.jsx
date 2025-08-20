@@ -100,9 +100,9 @@ export default function Hero() {
             </ul>
         </div>
         <div className="flex flex-col w-96 gap-6">
-  <div className="w-full"><Spotify /></div>
-  <div className="w-full !max-w-full"><Skills /></div>
-</div>
+            <div className="w-full"><Spotify /></div>
+            <div className="w-full !max-w-full"><Skills /></div>
+        </div>
       </div>
 
 
