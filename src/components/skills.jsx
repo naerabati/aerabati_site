@@ -33,7 +33,7 @@ export default function Skills() {
 
   return (
     <section className="w-full py-3 md:px-2 lg:px-5 border rounded-2xl  mx-auto">
-      <h2 className="text-2xl text-center mb-6 text-green-950 ">Skills</h2>
+      <h2 className="text-2xl text-center mb-7 text-green-950 ">Skills</h2>
       <div className="grid grid-cols-4 gap-4 justify-items-center">
         {skills.map((skill, index) => (
           <div

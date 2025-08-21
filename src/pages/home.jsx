@@ -4,7 +4,7 @@ import Footer from "../components/footer.jsx"
 
 const Home = () => {
   return (
-    <> <div className="mb-10">
+    <> <div className="mb-5">
         <Hero />
       </div>
     

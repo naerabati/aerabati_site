@@ -93,8 +93,8 @@ export default function Hero() {
         </div>
 
         <div className="flex flex-col w-full md:w-96 gap-6">
-          <div className="w-full"><Spotify /></div>
           <div className="w-full"><Skills /></div>
+          <div className="w-full"><Spotify /></div>
         </div>
       </div>
 
