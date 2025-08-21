@@ -2,13 +2,13 @@ import { Routes, Route, Link, useParams } from "react-router-dom";
 import firstPostContent from "./posts_files/post_1.md?raw";
 import secondPostContent from "./posts_files/post_2.md?raw";
 import MarkdownRenderer from "../lib/MarkdownRender.jsx";
-import Footer from "../components/footer.jsx"
+
 
 
 const posts = [
     {
       id: "1",
-      title: "First post",
+      title: "First Post",
       date: "Aug 8, 2025",
       caption: "This is my text post",
       content: firstPostContent,
@@ -24,11 +24,11 @@ const posts = [
   
   function PostList() {
     return (
-      <div className="flex flex-col justify-center place-items-center">
-        <h1 className="text-4xl mb-10 text-center font-medium">Posts</h1>
+      <div className="flex flex-col justify-center place-items-center px-4 sm:px-6 md:px-10">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl mb-10 text-center font-medium">Posts</h1>
         <div className="flex flex-col gap-1">
           {posts.map((post) => (
-            <div key={post.id} className="p-6 rounded-2xl w-2xl items-center">
+            <div key={post.id} className="p-6 rounded-2xl w-full md:w-2xl items-center">
               <h2 className="text-2xl mb-2">
                 <Link
                   to={`/posts/${post.id}`}
@@ -38,7 +38,7 @@ const posts = [
                 </Link>
               </h2>
               <p className="text-md mb-6">{post.date}</p>
-              <p className="mb-4 text-green-800">{post.caption}</p>
+              <p className="mb-4">{post.caption}</p>
               <hr className="mt-8" style={{ height: 5 }} />
             </div>
           ))}
@@ -51,12 +51,12 @@ const posts = [
     const { id } = useParams();
     const post = posts.find((p) => p.id === id);
   
-    if (!post) return <p className="text-center">Post not found</p>;
+    if (!post) return <p className=" text-center">Post not found</p>;
   
     return (
-      <div className="max-w-3xl mx-auto p-6 items-center">
+      <div className="max-w-3xl mx-auto  items-center px-4 sm:px-20 md:px-30 py-8">
         <h1 className="text-3xl mb-4 mt-7">{post.title}</h1>
-        <p className="text-md mb-6">{post.date}</p>
+        <p className="text-sm sm:text-md text-gray-500 mb-6">{post.date}</p>
         <MarkdownRenderer content={post.content} />
         <Link to="/posts" className="text-blue-500 hover:underline block mt-6">
           ← Back to posts
