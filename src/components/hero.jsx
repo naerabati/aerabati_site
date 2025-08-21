@@ -77,10 +77,10 @@ export default function Hero() {
         <div className="flex flex-col w-full md:w-96 gap-6">
           <div>
             <h2 className="text-2xl font-medium pb-6">Research</h2>
-            <p className="pb-6">
+            <p className="pb-6 text-lg">
               I've been doing research in the Quantum Sciences field, and my work includes:
             </p>
-            <ul className="list-disc list-inside space-y-2 text-base sm:text-md">
+            <ul className="list-disc list-inside space-y-2 text-base sm:text-md text-md">
               <li>Quantum circuit optimizations via ZX Calculus</li>
               <li>Machine learning for quantum control based on superconducting hardware readout data</li>
               <li>Development of filters for superconducting hardware</li>
