@@ -62,7 +62,7 @@ export default function Hero() {
           </p>
         </div>
         <div
-          className="cursor-pointer transition-all duration-700 transform hover:scale-105 w-auto md:w-auto pt-15"
+          className="cursor-pointer transition-all duration-700 transform hover:scale-102 w-auto md:w-auto pt-15"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
