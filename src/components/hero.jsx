@@ -79,7 +79,7 @@ export default function Hero() {
         </ul>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-center md:items-start gap-6 w-full sm:max-w-6/8  lg:max-w-4/8 mt-10">
+      <div className="flex flex-col md:flex-row justify-center md:items-start gap-6 w-full sm:max-w-6/8  lg:max-w-4/8 2xl:max-w-3/8 mt-10">
         <div className="w-full md:w-1/2"><Skills /></div>
 
         <div className="flex flex-col gap-6 w-full md:w-1/2">
