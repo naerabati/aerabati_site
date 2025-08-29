@@ -63,6 +63,7 @@ export default function Hero() {
           I'm an undergraduate student at the University of Illinois,
           Urbana-Champaign majoring in computer science and physics.
         </p>
+      
       </div>
 
      
