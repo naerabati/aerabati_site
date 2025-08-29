@@ -24,8 +24,8 @@ const posts = [
   
   function PostList() {
     return (
-      <div className="flex flex-col justify-center place-items-center px-4 sm:px-6 md:px-10">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl mb-10 text-center font-medium">Posts</h1>
+      <div className="flex flex-col justify-center place-items-center px-4 sm:px-6 md:px-10 mt-10">
+        <h1 className="text-2xl sm:text-3xl md:text-5xl mb-10 text-center">Posts</h1>
         <div className="flex flex-col gap-1">
           {posts.map((post) => (
             <div key={post.id} className="p-6 rounded-2xl w-full md:w-2xl items-center">

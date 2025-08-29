@@ -2,7 +2,7 @@ export default function Footer() {
     return (
       <div className="w-full text-muted-foreground ">
         <div className="w-full border border-muted-foreground opacity-10 "></div>
-        <div className="flex flex-col items-center justify-center h-24 gap-1 font-mono text-sm opacity-70">
+        <div className="flex flex-col items-center justify-center h-24 gap-1  text-sm opacity-70">
           <p>
             &copy; {new Date().getFullYear()} Nishna Aerabati. All rights reserved.
           </p>

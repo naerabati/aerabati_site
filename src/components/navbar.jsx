@@ -12,7 +12,7 @@ const navItems = [
 
 const Navbar = () => {
   return (
-    <nav className="sticky top-0 z-50 bg-opacity-70 backdrop-blur-md px-6 py-4">
+    <nav className="sticky top-0 z-50 bg-opacity-70 backdrop-blur-md px-6 py-4 pt-8">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <ul className="flex space-x-8 ">
           {navItems.map((item) => (

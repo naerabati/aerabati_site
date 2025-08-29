@@ -47,28 +47,31 @@ export default function Hero() {
   const visual = isHovered ? <CodeVisual /> : <TerminalVisual />;
 
   return (
-    <div className="flex flex-col items-center px-4 sm:px-8 gap-12 mt-35">
+    <div className="flex flex-col items-center px-4 sm:px-8 gap-12 mt-30">
 
-      <div className="max-w-xl text-left mb-10">
-        <h1 className="pb-2 text-3xl sm:text-4xl md:text-5xl font-medium text-center md:text-left">
+        <h1 className="pb-1 max-w-3xl text-3xl sm:text-6xl md:text-8xl text-center md:text-left">
           Nishna Aerabati
         </h1>
-        <p className="text-xl sm:text-2xl md:text-lg font-medium pb-3 text-center md:text-left">
+       
+      <div className="max-w-2xl text-left mb-15">
+  
+       
+        <p className="text-xl sm:text-2xl md:text-3xl font-medium pb-9 text-center md:text-left">
           cs + physics @ UIUC
         </p>
-        <p className="text-base sm:text-md text-center md:text-left">
+        <p className="text-base sm:text-md md:text-lg text-center md:text-left">
           I'm an undergraduate student at the University of Illinois,
           Urbana-Champaign majoring in computer science and physics.
         </p>
       </div>
 
      
-      <div className="max-w-xl text-left">
-        <h2 className="text-2xl font-medium pb-6 text-center md:text-left">Research</h2>
+      <div className="max-w-2xl text-left">
+        <h2 className="text-4xl font-medium pb-6 text-center md:text-left">Research</h2>
         <p className="pb-6 text-lg text-center md:text-left">
           I've been doing research in the Quantum Sciences field, and my work includes:
         </p>
-        <ul className="list-disc list-inside space-y-2 text-base sm:text-md">
+        <ul className="list-disc list-inside space-y-2 text-base sm:text-md md:text-lg">
           <li>Quantum circuit optimizations via ZX Calculus</li>
           <li>Machine learning for quantum control based on superconducting hardware readout data</li>
           <li>Development of filters for superconducting hardware</li>
