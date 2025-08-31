@@ -68,13 +68,13 @@ export default function Spotify() {
         <div>
           <button
             onClick={() => setShowRecentlyPlayed(!showRecentlyPlayed)}
-            className=" text-md  cursor-pointer font-semibold hover:text-green-500 transition-all duration-300 pb-2 rounded-3xl"
+            className=" text-md  cursor-pointer font-semibold hover:text-green-500 transition-all ease-in-out duration-300 pb-2 rounded-3xl"
           >
             {showRecentlyPlayed ? "Hide Recently Played" : "Show Recently Played"}
           </button>
 
           <div
-            className={`transition-all duration-500 overflow-hidden ${
+            className={`transition-all ease-in-out duration-900 overflow-hidden ${
               showRecentlyPlayed ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
             }`}
           >
