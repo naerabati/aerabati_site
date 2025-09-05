@@ -60,7 +60,7 @@ export default function Hero() {
         <p className="text-center font-light text-xl sm:text-2xl md:text-left mb-8">
           cs + physics @ UIUC
         </p>
-        <p className="text-center lg:text-left text-lg max-w-2xl">
+        <p className="text-center md:text-left text-lg max-w-2xl">
           I'm an undergraduate student at the University of Illinois,
           Urbana-Champaign majoring in computer science and physics.
         </p>
