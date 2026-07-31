@@ -18,6 +18,7 @@ const Navbar = () => {
             <li key={item.id}>
               <Link
                 to={item.path}
+                state={item.id === "home" ? { skipIntro: true } : undefined}
                 className="text-green-950 text-base sm:text-lg md:text-xl hover:text-green-700  hover:shadow-[0_0_8px_#22c55e] transition-all duration-300 px-4 py-2 rounded-3xl font-normal"
               >
                 {item.label}

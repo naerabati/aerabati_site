@@ -43,7 +43,7 @@ export default function Spotify() {
           <img
             src="/spotify.png"
             alt="Spotify"
-            className="w-8 sm:w-10 md:w-11 h-auto object-contain absolute right-0"
+            className="w-8 sm:w-10 md:w-11 h-auto object-contain absolute right-0 top-1"
           />
         </div>
 

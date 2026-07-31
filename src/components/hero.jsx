@@ -7,108 +7,97 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.30,
-      delayChildren: 0.15,
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { 
-    opacity: 0, 
-    y: 30 
-  },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
     transition: { 
-      duration: 2.0, 
+      duration: 0.8, 
       ease: [0.16, 1, 0.3, 1] 
     },
   },
 };
 
-const experiences = [
-  {
-    id: 1,
-    title: 'Fermilab Quantum Simulation Intern',
-    company: 'Fermilab',
-    date: 'May 2025 - Aug 2025',
-    description: 'Assisted in simulating quantum circuits and developing algorithms for ground state energy estimation.',
-  },
-  {
-    id: 2,
-    title: 'Undergraduate Researcher',
-    company: 'Pfaff Quantum Circuit Lab',
-    date: 'Sept 2024 - Present',
-    description: 'Worked on developing a machine learning model for quantum control based on readout data.',
-  },
-  {
-    id: 3,
-    title: 'Open Source Contributor',
-    company: 'Cirq / Qiskit',
-    date: 'May 2021 - Aug 2024',
-    description: 'Contributed bug fixes, optimizations, and new features.',
-  },
-  {
-    id: 4,
-    title: 'Student Researcher @ UChicago PL Research Lab',
-    company: 'UChicago CS Department',
-    date: 'Aug 2023 - May 2024',
-    description: 'Applied ZX Calculus for quantum circuit optimization.',
-  },
-];
-
 export default function Hero() {
   return (
     <motion.div
-      className="w-full max-w-3xl mx-auto px-4 sm:px-6 pt-20 pb-20 flex flex-col gap-20"
+      className="w-full max-w-2xl mx-auto px-4 sm:px-6 pt-16 pb-20 flex flex-col gap-12 text-green-950"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
-      <motion.section variants={itemVariants} className="text-green-950 text-center space-y-2">
-        <h1 className="text-6xl sm:text-5xl md:text-7xl font-light tracking-tight">
-           Nishna Aerabati
+      {/* Name / Subtitle Header */}
+      <motion.section variants={itemVariants} className="text-center space-y-2">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-light tracking-tight">
+          Nishna Aerabati
         </h1>
-        <p className="font-light text-base md:text-2xl sm:text-xl dark:text-gray-400">
-           cs + physics @ UIUC
+        <p className="font-light text-base sm:text-xl dark:text-gray-400">
+          cs + physics @ UIUC
         </p>
       </motion.section>
 
-      {/* Narrative Bio / Research Section */}
-      <motion.section variants={itemVariants} className="text-green-950 text-left space-y-3">
-        <h2 className="text-xl sm:text-2xl font-light">About & Research</h2>
-        <p className="text-sm sm:text-base leading-relaxed dark:text-gray-300 font-light">
-          I explore quantum sciences with a focus on scientific computing and hardware optimization. 
-          My recent work spans quantum circuit optimizations via ZX Calculus, machine learning for 
-          quantum control on superconducting hardware, neutrino ground state preparations (VQE, DMRG, Hartree-Fock), 
-          and open-source contributions to Cirq and Qiskit.
-        </p>
-      </motion.section>
-
-      {/* Experience Section */}
-      <motion.section variants={itemVariants} className="text-green-950 space-y-6 text-left">
-        <h2 className="text-xl sm:text-2xl font-light">Experience</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {experiences.map((exp) => (
-            <div
-              key={exp.id}
-              className="p-5 border border-green-950 rounded-xl transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_0_12px_rgba(34,197,94,0.3)] flex flex-col justify-between"
-            >
-              <div>
-                <h3 className="text-base font-semibold leading-snug mb-1">{exp.title}</h3>
-                <p className="text-xs font-medium text-emerald-600 dark:text-emerald-400 mb-0.5">{exp.company}</p>
-                <p className="text-[11px] text-gray-400 mb-2">{exp.date}</p>
-                <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">{exp.description}</p>
-              </div>
-            </div>
-          ))}
+      {/* Minimal About Me Paragraph Section */}
+      <motion.section variants={itemVariants} className="space-y-4 text-center sm:text-left">
+        <h2 className="text-xs uppercase tracking-widest text-emerald-800 dark:text-emerald-400 font-semibold">
+          About Me
+        </h2>
+        <div className="space-y-3 text-sm sm:text-base leading-relaxed font-light dark:text-gray-300">
+          <p>
+            I study Computer Science and Physics at the University of Illinois Urbana-Champaign (UIUC).
+            My work focuses on quantum information science, scientific computing, and hardware optimization.
+          </p>
+          <p>
+            Currently, I research at the <span className="font-normal text-emerald-700 dark:text-emerald-300">Pfaff Quantum Circuit Lab</span>, 
+            developing machine learning models for quantum control based on readout data from superconducting hardware.
+          </p>
+          <p>
+            This summer, I&apos;m interning at <span className="font-normal text-emerald-700 dark:text-emerald-300">Fermilab</span> in the Quantum Simulation group, 
+            assisting with quantum circuit simulations and ground-state energy estimation algorithms for high-energy physics.
+          </p>
         </div>
       </motion.section>
 
-      {/* Bottom Grid with Natural Item Alignment */}
-      <motion.section variants={itemVariants} className="text-green-950 grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+      {/* Experience & Research Highlights with Hover Glow Effect */}
+      <motion.section variants={itemVariants} className="space-y-4">
+        <h2 className="text-xs uppercase tracking-widest text-emerald-800 dark:text-emerald-400 font-semibold text-center sm:text-left">
+          Research & Experience
+        </h2>
+        <div className="flex flex-col gap-3">
+          <div className="p-4 rounded-xl border border-transparent hover:border-green-950/20 transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_0_12px_rgba(34,197,94,0.25)] bg-green-950/[0.02]">
+            <p className="text-sm font-light leading-relaxed dark:text-gray-300">
+              <strong className="font-medium text-green-950 dark:text-emerald-300">Fermilab Quantum Simulation Intern:</strong> Assisting in simulating quantum circuits and developing algorithms for ground state energy estimation.
+            </p>
+          </div>
+
+          <div className="p-4 rounded-xl border border-transparent hover:border-green-950/20 transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_0_12px_rgba(34,197,94,0.25)] bg-green-950/[0.02]">
+            <p className="text-sm font-light leading-relaxed dark:text-gray-300">
+              <strong className="font-medium text-green-950 dark:text-emerald-300">Pfaff Quantum Circuit Lab:</strong> Developing ML-driven methods for quantum control and readout parameter optimization on superconducting hardware.
+            </p>
+          </div>
+
+          <div className="p-4 rounded-xl border border-transparent hover:border-green-950/20 transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_0_12px_rgba(34,197,94,0.25)] bg-green-950/[0.02]">
+            <p className="text-sm font-light leading-relaxed dark:text-gray-300">
+              <strong className="font-medium text-green-950 dark:text-emerald-300">Open Source (Cirq / Qiskit):</strong> Contributed optimizations, bug fixes, and feature enhancements to open-source quantum computing frameworks.
+            </p>
+          </div>
+
+          <div className="p-4 rounded-xl border border-transparent hover:border-green-950/20 transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_0_12px_rgba(34,197,94,0.25)] bg-green-950/[0.02]">
+            <p className="text-sm font-light leading-relaxed dark:text-gray-300">
+              <strong className="font-medium text-green-950 dark:text-emerald-300">UChicago PL Research Lab:</strong> Applied ZX Calculus techniques toward quantum circuit compilation and gate reduction.
+            </p>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Untouched Bottom Section: Skills & Spotify */}
+      <motion.section variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
         <div className="w-full transition-all duration-300 hover:scale-[1.01]">
           <Skills />
         </div>
