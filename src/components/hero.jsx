@@ -1,181 +1,124 @@
-import { useState } from 'react';
 import Skills from './skills.jsx';
 import Spotify from './spotify.jsx';
+import { motion } from 'framer-motion';
+
+// Stagger animation container
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.30,
+      delayChildren: 0.15,
+    },
+  },
+};
+
+// Smooth, subtle fade-up variant
+const itemVariants = {
+  hidden: { 
+    opacity: 0, 
+    y: 30 
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { 
+      duration: 2.0, 
+      ease: [0.16, 1, 0.3, 1] 
+    },
+  },
+};
+
+const experiences = [
+  {
+    id: 1,
+    title: 'Fermilab Quantum Simulation Intern',
+    company: 'Fermilab',
+    date: 'May 2025 - Aug 2025',
+    description: 'Assisted in simulating quantum circuits and developing algorithms for ground state energy estimation.',
+  },
+  {
+    id: 2,
+    title: 'Undergraduate Researcher',
+    company: 'Pfaff Quantum Circuit Lab',
+    date: 'Sept 2024 - Present',
+    description: 'Worked on developing a machine learning model for quantum control based on readout data.',
+  },
+  {
+    id: 3,
+    title: 'Open Source Contributor',
+    company: 'Cirq / Qiskit',
+    date: 'May 2021 - Aug 2024',
+    description: 'Contributed bug fixes, optimizations, and new features.',
+  },
+  {
+    id: 4,
+    title: 'Student Researcher @ UChicago PL Research Lab',
+    company: 'UChicago CS Department',
+    date: 'Aug 2023 - May 2024',
+    description: 'Applied ZX Calculus for quantum circuit optimization.',
+  },
+];
 
 export default function Hero() {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const TerminalVisual = () => (
-    <div className="w-full h-64 bg-gray-900 rounded-xl p-6 font-mono text-sm">
-      <div className="flex gap-2 mb-4">
-        <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-        <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-      </div>
-      <div className="space-y-2">
-        <div className="text-green-400">$ cd nishna</div>
-        <div className="text-white">hopefully sleeping</div>
-        <div className="text-green-500">$ ls hobbies</div>
-        <div className="text-white">spending hours picking a font</div>
-        <div className="text-green-400">$ git pull</div>
-        <div className="text-white">research in progress_</div>
-      </div>
-    </div>
-  );
-
-  const CodeVisual = () => (
-    <div className="w-full h-64 bg-gray-900 rounded-xl p-6 overflow-hidden">
-      <div className="space-y-3 font-mono text-sm">
-        <div className="text-purple-400">
-          <span className="text-pink-400">const</span> researcher = &#123;
-        </div>
-        <div className="text-blue-400 ml-4">
-          name: <span className="text-green-400">'Nishna'</span>,
-        </div>
-        <div className="text-blue-400 ml-4">
-          field: <span className="text-green-400">'Quantum Sciences'</span>,
-        </div>
-        <div className="text-blue-400 ml-4">
-          current focus: <span className="text-green-400">'Ground State Preparation'</span>
-        </div>
-        <div className="text-purple-400">&#125;</div>
-        <div className="text-gray-500 text-xs">// scientific computing</div>
-      </div>
-    </div>
-  );
-
-  const visual = isHovered ? <CodeVisual /> : <TerminalVisual />;
-
   return (
-    <div>
-    <div className="px-4 sm:px-8 py-16 max-w-4xl mx-auto flex flex-col gap-8 pt-25">
-
-        <h1 className="text-center text-5xl sm:text-6xl md:text-left md:text-7xl font-light tracking-tight">
-          Nishna Aerabati
+    <motion.div
+      className="w-full max-w-3xl mx-auto px-4 sm:px-6 pt-20 pb-20 flex flex-col gap-20"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.section variants={itemVariants} className="text-green-950 text-center space-y-2">
+        <h1 className="text-6xl sm:text-5xl md:text-7xl font-light tracking-tight">
+           Nishna Aerabati
         </h1>
-       
-      <div className="max-w-2xl text-left sm:mb-15">
-  
-       
-        <p className="text-center font-light text-xl sm:text-2xl md:text-left mb-8">
-          cs + physics @ UIUC
+        <p className="font-light text-base md:text-2xl sm:text-xl dark:text-gray-400">
+           cs + physics @ UIUC
         </p>
-        <p className="text-center md:text-left text-lg max-w-2xl">
-          I'm an undergraduate student at the University of Illinois,
-          Urbana-Champaign majoring in computer science and physics.
+      </motion.section>
+
+      {/* Left-Aligned Narrative Bio / Research Section */}
+      <motion.section variants={itemVariants} className="text-green-950 text-left space-y-3">
+        <h2 className="text-xl sm:text-2xl font-light">About & Research</h2>
+        <p className="text-sm sm:text-base leading-relaxed dark:text-gray-300 font-light">
+          I explore quantum sciences with a focus on scientific computing and hardware optimization. 
+          My recent work spans quantum circuit optimizations via ZX Calculus, machine learning for 
+          quantum control on superconducting hardware, neutrino ground state preparations (VQE, DMRG, Hartree-Fock), 
+          and open-source contributions to Cirq and Qiskit.
         </p>
-      
-      </div>
+      </motion.section>
 
-     
-      <div className="max-w-4xl text-left">
-        <h2 className="text-3xl font-light pb-6 text-center md:text-left">Research</h2>
-        <p className="pb-6 text-lg text-center md:text-left">
-          I've been doing research in the Quantum Sciences field, and my work includes:
-        </p>
-        <div className="space-y-4">
-            <div className="border-l-2 border-green-700 pl-6 animate-slide-in-left" style={{animationDelay: '0.5s'}}>
-              <p >Quantum circuit optimizations via ZX Calculus</p>
+      {/* Experience Section */}
+      <motion.section variants={itemVariants} className="text-green-950 space-y-6 text-left">
+        <h2 className="text-xl sm:text-2xl font-light">Experience</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {experiences.map((exp) => (
+            <div
+              key={exp.id}
+              className="p-5 border border-green-950 rounded-xl transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_0_12px_rgba(34,197,94,0.3)] flex flex-col justify-between"
+            >
+              <div>
+                <h3 className="text-base font-semibold leading-snug mb-1">{exp.title}</h3>
+                <p className="text-xs font-medium text-emerald-600 dark:text-emerald-400 mb-0.5">{exp.company}</p>
+                <p className="text-[11px] text-gray-400 mb-2">{exp.date}</p>
+                <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">{exp.description}</p>
+              </div>
             </div>
-            <div className="border-l-2 border-green-700  pl-6 animate-slide-in-left" style={{animationDelay: '0.6s'}}>
-              <p >Machine learning for quantum control based on superconducting hardware readout data</p>
-            </div>
-            <div className="border-l-2 border-green-700 pl-6 animate-slide-in-left" style={{animationDelay: '0.7s'}}>
-              <p>Development of filters for superconducting hardware</p>
-            </div>
-            <div className="border-l-2  border-green-700 pl-6 animate-slide-in-left" style={{animationDelay: '0.8s'}}>
-              <p >Quantum machine learning - developing ansatzes for entanglement detection</p>
-            </div>
-            <div className="border-l-2 border-green-700 pl-6 animate-slide-in-left" style={{animationDelay: '0.9s'}}>
-              <p >Quantum simulations - Ground state preparation for neutrinos via VQE, DMRG, Hartree-fock</p>
-            </div>
-            <div className="border-l-2 border-green-700 pl-6 animate-slide-in-left" style={{animationDelay: '1.0s'}}>
-              <p >Open source Cirq contributions</p>
-            </div>
-            <div className="border-l-2 border-green-700 pl-6 animate-slide-in-left" style={{animationDelay: '1.1s'}}>
-              <p >Circuit benchmarking</p>
-            </div>
-          </div>
-      </div>
-
-      <div className="flex flex-col md:flex-row justify-center item-center md:items-start gap-6 w-full px-10 md:px-0 lg:max-w-7/8 mt-10">
-        <div className="w-full md:w-1/2"><Skills /></div>
-
-        <div className="flex flex-col gap-6 w-full md:w-1/2">
-          <div
-            className="cursor-pointer transition-all duration-700 transform hover:scale-105"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            {visual}
-          </div>
-          <div><Spotify /></div>
+          ))}
         </div>
-      </div>
-    </div>
+      </motion.section>
 
-<style jsx>{`
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+      {/* Sleek Bottom Grid - Stretched Heights */}
+      <motion.section variants={itemVariants} className="text-green-950 grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+        <div className="w-full h-full transition-all duration-300 hover:scale-[1.01]">
+          <Skills />
+        </div>
 
-  @keyframes slideInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-15px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  .animate-fade-in-up {
-    animation: fadeInUp 0.6s ease-out forwards;
-  }
-
-  .animate-fade-in-up-delay-1 {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out 0.1s forwards;
-  }
-
-  .animate-fade-in-up-delay-2 {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out 0.2s forwards;
-  }
-
-  .animate-fade-in-up-delay-3 {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out 0.3s forwards;
-  }
-
-  .animate-fade-in-up-delay-4 {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out 0.4s forwards;
-  }
-
-  .animate-fade-in-up-delay-5 {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out 0.7s forwards;
-  }
-
-  .animate-fade-in-up-delay-6 {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out 0.8s forwards;
-  }
-
-  .animate-slide-in-left {
-    opacity: 0;
-    animation: slideInLeft 0.4s ease-out forwards;
-  }
-`}</style>
-</div>
+        <div className="w-full h-full transition-all duration-300 hover:scale-[1.01]">
+          <Spotify />
+        </div>
+      </motion.section>
+    </motion.div>
   );
 }

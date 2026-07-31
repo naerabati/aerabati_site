@@ -42,7 +42,7 @@ const Experience = () => {
           {experiences.map((exp) => (
             <div
               key={exp.id}
-              className="p-6 bg-[#fafafa] rounded-2xl shadow-sm shadow-green-950 hover:shadow-green-500 shadow-gray hover:shadow-[0_0_25px_rgba(34,197,94,0.6)] transition-shadow duration-300 "
+              className="p-6  rounded-2xl shadow-sm shadow-green-950 hover:shadow-green-500 shadow-gray hover:shadow-[0_0_25px_rgba(34,197,94,0.6)] transition-shadow duration-300 "
             >
               <h2 className="text-xl font-semibold mb-2">{exp.title}</h2>
               <p className=" font-medium mb-1">{exp.company}</p>

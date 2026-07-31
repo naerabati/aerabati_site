@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getNowPlayingJSON, getRecentlyPlayedJSON } from "../lib/spotify_api";
+import { getNowPlayingJSON, getRecentlyPlayedJSON } from "../lib/spotify-api";
 import './spotify.css';
 
 export default function Spotify() {
@@ -31,44 +31,46 @@ export default function Spotify() {
   const isPlaying = nowPlaying && nowPlaying.is_playing;
 
   return (
-    <div className="border border-green-950 w-full max-w-full overflow-hidden p-3 sm:p-4 md:p-6 text-xs sm:text-sm rounded-xl cursor-auto">
-      <h2 className="text-2xl mb-3 flex justify-between items-center">
-        <span className="text-green-950">Music</span>
-        <img
-          src="/spotify.png"
-          alt="Spotify"
-          className="w-6 sm:w-8 md:w-10 lg:w-12 h-auto object-contain"
-        />
-      </h2>
-
-      {/* Now Playing */}
-      {isPlaying && nowPlaying?.item ? (
-        <div className="mb-4 flex items-center gap-3 rounded-2xl transition-all duration-300 ">
+    <div className="border border-green-950 w-full h-full flex flex-col justify-between overflow-hidden p-3 sm:p-4 md:p-6 text-xs sm:text-sm rounded-2xl cursor-auto">
+      <div>
+        <h2 className="text-2xl mb-3 flex justify-between items-center">
+          <span className="text-green-950">Music</span>
           <img
-            src={nowPlaying.item?.album?.images?.[0]?.url}
-            alt="Album cover"
-            className="w-[108px] h-[108px] object-cover rounded-lg"
+            src="/spotify.png"
+            alt="Spotify"
+            className="w-6 sm:w-8 md:w-10 lg:w-12 h-auto object-contain"
           />
-          <div className="rounded-2xl">
-            <p className="text-sm text-green-500 font-medium mb-1 ">
-              Now Playing:
-            </p>
-            <p className="font-semibold">{nowPlaying.item?.name}</p>
-            <p className="text-sm">
-              {nowPlaying.item?.artists?.map((a) => a.name).join(", ")}
-            </p>
+        </h2>
+
+        {/* Now Playing */}
+        {isPlaying && nowPlaying?.item ? (
+          <div className="mb-4 flex items-center gap-3 rounded-2xl transition-all duration-300 ">
+            <img
+              src={nowPlaying.item?.album?.images?.[0]?.url}
+              alt="Album cover"
+              className="w-[108px] h-[108px] object-cover rounded-lg"
+            />
+            <div className="rounded-2xl">
+              <p className="text-sm text-green-500 font-medium mb-1 ">
+                Now Playing:
+              </p>
+              <p className="font-semibold">{nowPlaying.item?.name}</p>
+              <p className="text-sm">
+                {nowPlaying.item?.artists?.map((a) => a.name).join(", ")}
+              </p>
+            </div>
           </div>
-        </div>
-      ) : (
-        <p className="mb-4">Not currently listening</p>
-      )}
+        ) : (
+          <p className="mb-4">Not currently listening</p>
+        )}
+      </div>
 
       {/* Recently Played Toggle */}
       {recentlyPlayed.length > 0 && (
         <div>
           <button
             onClick={() => setShowRecentlyPlayed(!showRecentlyPlayed)}
-            className=" text-md  cursor-pointer font-semibold hover:text-green-500 transition-all ease-in-out duration-300 pb-2 rounded-3xl"
+            className="text-md cursor-pointer font-semibold hover:text-green-500 transition-all ease-in-out duration-300 pb-2 rounded-3xl"
           >
             {showRecentlyPlayed ? "Hide Recently Played" : "Show Recently Played"}
           </button>

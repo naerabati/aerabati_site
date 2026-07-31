@@ -20,11 +20,13 @@ export const getAccessToken = async () => {
     },
     body: new URLSearchParams({
       grant_type: 'refresh_token',
-      refresh_token,
+      refresh_token: refresh_token || '',
     }),
   });
 
   if (!response.ok) {
+    const errorDetails = await response.json();
+    console.error("Spotify Token Request Failed Details:", errorDetails);
     throw new Error(`Failed to get access token: ${response.statusText}`);
   }
 

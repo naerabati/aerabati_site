@@ -25,7 +25,6 @@ export default function Skills() {
     { icon: <SiCplusplus />, name: "C++" },
     { icon: <PiFileCSharpDuotone />, name: "C#" },
     { icon: <FaRust />, name: "Rust" },
-    { icon: <SiQiskit />, name: "Qiskit" },
     { icon: <SiNumpy />, name: "NumPy" },
     { icon: <FaPython />, name: "Python" },
     { icon: <PiFileSqlDuotone />, name: "SQL" },
