@@ -2,7 +2,6 @@ import Skills from './skills.jsx';
 import Spotify from './spotify.jsx';
 import { motion } from 'framer-motion';
 
-// Stagger animation container
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -14,7 +13,6 @@ const containerVariants = {
   },
 };
 
-// Smooth, subtle fade-up variant
 const itemVariants = {
   hidden: { 
     opacity: 0, 
@@ -78,7 +76,7 @@ export default function Hero() {
         </p>
       </motion.section>
 
-      {/* Left-Aligned Narrative Bio / Research Section */}
+      {/* Narrative Bio / Research Section */}
       <motion.section variants={itemVariants} className="text-green-950 text-left space-y-3">
         <h2 className="text-xl sm:text-2xl font-light">About & Research</h2>
         <p className="text-sm sm:text-base leading-relaxed dark:text-gray-300 font-light">
@@ -109,13 +107,13 @@ export default function Hero() {
         </div>
       </motion.section>
 
-      {/* Sleek Bottom Grid - Stretched Heights */}
-      <motion.section variants={itemVariants} className="text-green-950 grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
-        <div className="w-full h-full transition-all duration-300 hover:scale-[1.01]">
+      {/* Bottom Grid with Natural Item Alignment */}
+      <motion.section variants={itemVariants} className="text-green-950 grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+        <div className="w-full transition-all duration-300 hover:scale-[1.01]">
           <Skills />
         </div>
 
-        <div className="w-full h-full transition-all duration-300 hover:scale-[1.01]">
+        <div className="w-full transition-all duration-300 hover:scale-[1.01] self-stretch">
           <Spotify />
         </div>
       </motion.section>

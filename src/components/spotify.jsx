@@ -31,66 +31,79 @@ export default function Spotify() {
   const isPlaying = nowPlaying && nowPlaying.is_playing;
 
   return (
-    <div className="border border-green-950 w-full h-full flex flex-col justify-between overflow-hidden p-3 sm:p-4 md:p-6 text-xs sm:text-sm rounded-2xl cursor-auto">
+    <div 
+      className={`border border-green-950 w-full flex flex-col justify-between overflow-hidden py-3.5 px-4 sm:px-5 text-xs sm:text-sm rounded-2xl cursor-auto transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        showRecentlyPlayed ? "md:h-full" : "h-auto"
+      }`}
+    >
       <div>
-        <h2 className="text-2xl mb-3 flex justify-between items-center">
-          <span className="text-green-950">Music</span>
+        {/* Header - Aligned cleanly with Skills Title */}
+        <div className="relative mb-5 flex items-center justify-center">
+          <h2 className="text-2xl text-center text-green-950 font-normal">Music</h2>
           <img
             src="/spotify.png"
             alt="Spotify"
-            className="w-6 sm:w-8 md:w-10 lg:w-12 h-auto object-contain"
+            className="w-8 sm:w-10 md:w-11 h-auto object-contain absolute right-0"
           />
-        </h2>
+        </div>
 
-        {/* Now Playing */}
+        {/* Now Playing or Idle State */}
         {isPlaying && nowPlaying?.item ? (
-          <div className="mb-4 flex items-center gap-3 rounded-2xl transition-all duration-300 ">
+          <div className="mb-3 flex items-center gap-3">
             <img
               src={nowPlaying.item?.album?.images?.[0]?.url}
               alt="Album cover"
-              className="w-[108px] h-[108px] object-cover rounded-lg"
+              className="w-[80px] h-[80px] object-cover rounded-xl flex-shrink-0 shadow-sm"
             />
-            <div className="rounded-2xl">
-              <p className="text-sm text-green-500 font-medium mb-1 ">
+            <div className="min-w-0">
+              <p className="text-xs text-green-600 dark:text-green-400 font-medium mb-1">
                 Now Playing:
               </p>
-              <p className="font-semibold">{nowPlaying.item?.name}</p>
-              <p className="text-sm">
+              <p className="font-semibold text-sm truncate">{nowPlaying.item?.name}</p>
+              <p className="text-xs text-gray-600 dark:text-gray-400 truncate">
                 {nowPlaying.item?.artists?.map((a) => a.name).join(", ")}
               </p>
             </div>
           </div>
         ) : (
-          <p className="mb-4">Not currently listening</p>
+          <div className="mb-3 py-3 flex flex-col items-center justify-center border border-dashed border-green-950/20 rounded-xl bg-green-950/5">
+            <p className="text-xs font-medium text-green-950/70 tracking-wide uppercase">
+              Offline • Not Playing
+            </p>
+          </div>
         )}
-      </div>
 
-      {/* Recently Played Toggle */}
-      {recentlyPlayed.length > 0 && (
-        <div>
+        {/* Toggle Button */}
+        {recentlyPlayed.length > 0 && (
           <button
             onClick={() => setShowRecentlyPlayed(!showRecentlyPlayed)}
-            className="text-md cursor-pointer font-semibold hover:text-green-500 transition-all ease-in-out duration-300 pb-2 rounded-3xl"
+            className="text-xs cursor-pointer font-semibold text-left text-green-950 hover:text-green-600 transition-colors py-1 flex items-center gap-1"
           >
-            {showRecentlyPlayed ? "Hide Recently Played" : "Show Recently Played"}
+            <span>{showRecentlyPlayed ? "Hide Recently Played" : "Show Recently Played"}</span>
           </button>
+        )}
 
-          <div
-            className={`transition-all ease-in-out duration-900 overflow-hidden ${
-              showRecentlyPlayed ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
-            }`}
-          >
-            <ul className="space-y-2 mt-2">
-              {recentlyPlayed.map((track, index) => (
-                <li key={index} className="flex items-center gap-3">
+        {/* CSS Grid Hardware-Accelerated Accordion */}
+        <div 
+          className={`grid transition-[grid-template-rows,opacity] duration-1200 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            showRecentlyPlayed ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+          }`}
+        >
+          <div className="overflow-hidden">
+            <ul className="space-y-2.5 pt-2 pb-1">
+              {recentlyPlayed.slice(0, 4).map((track, index) => (
+                <li 
+                  key={index} 
+                  className="flex items-center gap-3 p-1 rounded-lg hover:bg-green-950/5 transition-colors"
+                >
                   <img
                     src={track.track?.album?.images?.[0]?.url}
                     alt="Album cover"
-                    className="w-[72px] h-[72px] object-cover rounded-lg"
+                    className="w-[52px] h-[52px] object-cover rounded-lg flex-shrink-0 shadow-sm"
                   />
-                  <div>
-                    <p className="font-semibold">{track.track?.name}</p>
-                    <p className="text-sm">
+                  <div className="min-w-0">
+                    <p className="font-semibold text-xs truncate">{track.track?.name}</p>
+                    <p className="text-xs text-gray-500 truncate">
                       {track.track?.artists?.map((a) => a.name).join(", ")}
                     </p>
                   </div>
@@ -99,7 +112,7 @@ export default function Spotify() {
             </ul>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }
