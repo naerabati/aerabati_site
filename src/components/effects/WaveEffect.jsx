@@ -9,7 +9,7 @@ function noise2D(x, y) {
   return (Math.sin(sin1 * 43758.5453) + Math.cos(sin2 * 23421.123)) * 0.5;
 }
 
-export default function ParticleWorldMap() {
+export default function WaveEffect() {
   const canvasRef = useRef(null);
   const rootRef = useRef(null);
 

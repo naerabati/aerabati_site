@@ -56,7 +56,7 @@ export default function Spotify() {
               className="w-[80px] h-[80px] object-cover rounded-xl flex-shrink-0 shadow-sm"
             />
             <div className="min-w-0">
-              <p className="text-xs text-green-600 dark:text-green-400 font-medium mb-1">
+              <p className="text-xs text-green-800 dark:text-green-400 font-normal mb-2">
                 Now Playing:
               </p>
               <p className="font-semibold text-sm truncate">{nowPlaying.item?.name}</p>

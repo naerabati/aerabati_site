@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import ParticleWorldMap from "./effects/worldmap/ParticleWorldMap";
+import WaveEffect from "./effects/WaveEffect";
 
-export default function SapiensMeaning({ onDismiss }) {
+export default function LandingPage({ onDismiss }) {
   const [isSliding, setIsSliding] = useState(false);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function SapiensMeaning({ onDismiss }) {
     >
       {/* Background Canvas */}
       <div className="absolute inset-0 h-full w-full">
-        <ParticleWorldMap />
+        <WaveEffect />
       </div>
 
       {/* Center Front Title */}

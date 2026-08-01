@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Hero from "../components/hero.jsx";
 import Footer from "../components/footer.jsx";
-import SapiensMeaning from "../components/SapiensMeaning.jsx";
+import LandingPage from "../components/LandingPage.jsx";
 
 const Home = () => {
   const location = useLocation();
@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <div className="relative min-h-screen flex flex-col justify-between bg-white text-gray-900">
       {/* Intro Slide Overlay */}
-      {showIntro && <SapiensMeaning onDismiss={() => setShowIntro(false)} />}
+      {showIntro && <LandingPage onDismiss={() => setShowIntro(false)} />}
 
       {/* Standard Home Content */}
       <div className="min-h-screen flex flex-col justify-between">
