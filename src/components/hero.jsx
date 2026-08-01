@@ -48,9 +48,12 @@ export default function Hero() {
         <h2 className="text-xs uppercase tracking-widest text-green-950 dark:text-green-400 font-bold">
           About Me
         </h2>
-        <div className="space-y-5 text-base sm:text-lg leading-relaxed font-extralight text-gray-800/90 dark:text-gray-200">
+        <div className="space-y-7 text-base sm:text-lg leading-relaxed font-extralight text-gray-800/90 dark:text-gray-200">
           <p>
-            Hi, I&apos;m Nishna. I study Computer Science and Physics at the University of Illinois Urbana-Champaign (UIUC) with a minor in Mathematics. My work focuses on quantum information science, scientific computing, and algorithm optimization.
+            Hi, I&apos;m Nishna. I study Computer Science and Physics at the University of Illinois Urbana-Champaign (UIUC) with a minor in Mathematics. 
+          </p>
+          <p>
+            My work focuses on quantum information science, scientific computing, and algorithm optimization.
           </p>
           <p>
             Currently, I&apos;m a part of the lab{" "}
@@ -62,20 +65,9 @@ export default function Hero() {
             >
               HEP-QIS @ UIUC
             </a>{" "}
-            (Quantum Computing for High Energy Physics) under Dr. Draper, developing Python-based simulations of lattice gauge theories tailored for fault-tolerant quantum architectures.
+            under Dr. Draper, working on quantum simulations for high energy physics.
           </p>
-          <p>
-            This summer, I&apos;m interning at{" "}
-            <a
-              href="https://sqmscenter.fnal.gov/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-green-950 underline decoration-green-800/30 hover:decoration-green-800 transition-colors dark:text-green-300"
-            >
-              Fermilab
-            </a>{" "}
-            in the SQMS center, assisting with quantum circuit simulations and ground-state energy estimation algorithms for high-energy physics.
-          </p>
+          
         </div>
       </motion.section>
 
@@ -96,7 +88,7 @@ export default function Hero() {
               >
                 HEP-QIS @ UIUC Lab:
               </a>{" "}
-              Developing fault-tolerant Python simulations for lattice gauge theories in high-energy physics.
+              Developing fault-tolerant Python simulations for lattice gauge theories.
             </p>
           </div>
 
