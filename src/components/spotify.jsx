@@ -43,7 +43,7 @@ export default function Spotify() {
           <img
             src="/spotify.png"
             alt="Spotify"
-            className="w-8 sm:w-10 md:w-11 h-auto object-contain absolute right-0 top-1"
+            className="w-8 sm:w-10 md:w-7 h-auto object-contain absolute right-0 top-0"
           />
         </div>
 
@@ -66,7 +66,7 @@ export default function Spotify() {
             </div>
           </div>
         ) : (
-          <div className="mb-3 py-3 flex flex-col items-center justify-center border border-dashed border-green-950/20 rounded-xl bg-green-950/5">
+          <div className="mb-3 mt-3 py-3 flex flex-col items-center justify-center border border-dashed border-green-950/20 rounded-xl bg-green-950/5">
             <p className="text-xs font-medium text-green-950/70 tracking-wide uppercase">
               Offline • Not Playing
             </p>
@@ -90,16 +90,16 @@ export default function Spotify() {
           }`}
         >
           <div className="overflow-hidden">
-            <ul className="space-y-2.5 pt-2 pb-1">
+            <ul className="space-y-2.5 pt-2 pb-0">
               {recentlyPlayed.slice(0, 4).map((track, index) => (
                 <li 
                   key={index} 
-                  className="flex items-center gap-3 p-1 rounded-lg hover:bg-green-950/5 transition-colors"
+                  className="flex items-center gap-4 p-1 rounded-lg transition-colors"
                 >
                   <img
                     src={track.track?.album?.images?.[0]?.url}
                     alt="Album cover"
-                    className="w-[52px] h-[52px] object-cover rounded-lg flex-shrink-0 shadow-sm"
+                    className="w-[55px] h-[55px] object-cover rounded-lg flex-shrink-0 "
                   />
                   <div className="min-w-0">
                     <p className="font-semibold text-xs truncate">{track.track?.name}</p>

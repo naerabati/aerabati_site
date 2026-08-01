@@ -8,12 +8,16 @@ const Home = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Check if skipIntro was set via Navbar navigation
-  const shouldSkip = location.state?.skipIntro ?? false;
-  const [showIntro, setShowIntro] = useState(!shouldSkip);
+  const [showIntro, setShowIntro] = useState(() => {
+    // If the navigation state asks to skip, skip it for this render
+    if (location.state?.skipIntro) {
+      return false;
+    }
+    return true;
+  });
 
   useEffect(() => {
-    // If state was present, clear it immediately so a subsequent reload forces the intro to show again
+    // Clear state after reading so manual browser reloads always trigger the intro
     if (location.state?.skipIntro) {
       navigate(location.pathname, { replace: true, state: {} });
     }
